@@ -4,11 +4,11 @@ import random
 import json
 
 userdic = dict()
-while 1:
-    def putuser(self, uid, udic):
-        self.userdic[uid] = udic
-
-
+def do(uid,udic):
+    userdic[uid] = udic
+    with open("userdic", "w") as fp:
+        a = json.dumps(userdic)
+        fp.write(a)
 
 class User():
 
@@ -73,8 +73,7 @@ class User():
 
         userdic = {"姓名": self.name, "活跃度": self.t1, "测验总成绩": self.test_grade,"选择题成绩":self.grade_xzt, "答辩成绩": self.d_grade, "总成绩": G_grade, "平时成绩":self.ps_grade}
 
-        putuser(uid=self.uid, udic=userdic)
-
+        do(uid=self.uid, udic=userdic)
 
 
 
