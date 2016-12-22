@@ -28,6 +28,6 @@ with open("ask", "w") as fp:
     fp.write(a)
 
 
-
+a = list
 
 
