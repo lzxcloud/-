@@ -1,0 +1,38 @@
+.center{
+    background: url("../img/askbackground.jpg");
+    background-size: cover;
+    background-position-x: 50%;
+    background-position-y: 0;
+    opacity: 1;
+    height: auto;
+}
+.w{
+    margin: 0 auto;
+    width: 960px;
+    height: auto;
+}
+.w .userinput{
+    margin: 0 auto;
+    width: 500px;
+    background: rgba(255,255,255,.6);
+    border-radius: 4px;
+    padding: 20px 40px;
+}
+
+.w .userinput .title{
+    font-size: 14px;
+    color: #4c4c4c;
+    margin-left: -10px;
+    padding-bottom: 3px;
+}
+
+
+.select {
+    font-size: 16px;
+    font-family: monospace;
+    line-height: 20px;
+}
+
+.kuang{
+    border: #66ccff 1px solid;
+}

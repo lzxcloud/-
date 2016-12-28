@@ -2,9 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>答题页</title>
+    <link type="text/css" rel="stylesheet" href="../static/css/commons.css"/>
+    <link type="text/css" rel="stylesheet" href="../static/css/ask.css"/>
 </head>
 <body>
-
+    <div class="center">
+        <div class="w">
+            <div class="userinput">
+                <h1 style="font-size: 30px">选择题部分</h1>
+                <form action="/manger" method="post">
+                    {%for s,j in enumerate(select_list)%}
+                <div class="ask">
+                    <div class="title" style="color: crimson">{{j[0]}}</div>
+                    <div class="select">
+                        <span>A</span>
+                        <span>{{j[1]}}</span>
+                        <input type="radio" name="{{temp_list[s]}}" value="A">
+                        <br>
+                        <span>B</span>
+                        <span>{{j[2]}}</span>
+                        <input type="radio" name="{{temp_list[s]}}" value="B">
+                        <br>
+                        <span>C</span>
+                        <span>{{j[3]}}</span>
+                        <input type="radio" name="{{temp_list[s]}}" value="C">
+                        <br>
+                        <span>D</span>
+                        <span>{{j[4]}}</span>
+                        <input type="radio" name="{{temp_list[s]}}" value="D">
+                        <br>
+                    </div>
+                </div>
+    {%end%}
+    <h1 style="font-size: 30px">简述题部分 (四选一) </h1>
+    简述云计算的三种分类(10-15)<br><br><br>
+    简述云计算的分层并列举一些互联网公司的样例（15-20)<br><br><br>
+    简述中小型企业常用的集群架构(25-35)<br><br><br>
+    实操  搭建kvm虚拟机实验环境(1h内)（25-35)<br><br>
+    <input type="password" name="d_grade" class="kuang" placeholder="请老师输入答辩成绩">
+    <input type="password" name="p_grade" class="kuang" placeholder="请老师输入平时成绩">
+                <div class="push">
+                   <input type="submit" name="提交">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

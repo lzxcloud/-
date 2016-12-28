@@ -6,7 +6,7 @@ import json
 userdic = dict()
 def do(uid,udic):
     userdic[uid] = udic
-    with open("userdic", "w") as fp:
+    with open("userdic2", "w") as fp:
         a = json.dumps(userdic)
         fp.write(a)
 
@@ -59,19 +59,18 @@ class User():
         """
         # 下面是防挂科代码
         G_grade_y = self.test_grade + self.ps_grade
-        x_grade = 60 - G_grade_y
-        if G_grade_y < 60:
-            randen = random.randint(0,5)
-            G_grade = 60 + randen
-            a = G_grade - G_grade_y
-            a = a*0.5
-            self.ps = self.ps + a
+        # x_grade = 60 - G_grade_y
+        # if G_grade_y < 60:
+        #     randen = random.randint(0,5)
+        #     G_grade = 60 + randen
+        #     a = G_grade - G_grade_y
+        #     a = a*0.5
+        #     self.ps_grade = self.ps_grade + a
+        # else:
+        #     G_grade = G_grade_y
+        #     pass
 
-        else:
-            G_grade = G_grade_y
-            pass
-
-        userdic = {"姓名": self.name, "活跃度": self.t1, "测验总成绩": self.test_grade,"选择题成绩":self.grade_xzt, "答辩成绩": self.d_grade, "总成绩": G_grade, "平时成绩":self.ps_grade}
+        userdic = {"姓名": self.name, "活跃度": self.t1, "测验总成绩": self.test_grade,"选择题成绩":self.grade_xzt, "答辩成绩": self.d_grade, "总成绩": G_grade_y, "平时成绩":self.ps_grade}
 
         do(uid=self.uid, udic=userdic)
 
